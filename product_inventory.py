@@ -63,16 +63,18 @@ print("")
 print("By what percentage do you want to increase the product prices? (0-100): ", end = "")
 percent = (int(input()))
 
-one_percent = ([int(pricelist) / 100 for pricelist in pricelist])
+one_percent = ([pricelist / 100 for pricelist in pricelist])
+#print(one_percent)
 percent_increase = ([one_percent * percent for one_percent in one_percent])
-percent_increased = ([pricelist[int] + percent_increase[int] for int in range(len(pricelist))])
+#print(percent_increase)
+percent_increased = ([pricelist[i] + percent_increase[i] for i in range(len(pricelist))]) # my dude literally used 'int' as a variable name and got away with it
 
 print("\nInventory after all the prices are increased by", percent, "percent:")
 print(productlist,percent_increased, "\n")
 #--------------------------------------------------------------------------------------
 #Function to remove object and price
 
-print("Name of the product to removed from inventory: ", end = " ")
+print("Name of the product to remove from inventory: ", end = "")
 popval.append(input())
 
 poplist_name = ([productlist.index(str) for str in popval])

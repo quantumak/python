@@ -12,50 +12,50 @@ popval = []
 #first product function
 print("Name of product 1: ", end = "")
 productlist.append(input())
-print("Price of the product: ")
+print("Price of the product: ", end='')
 pricelist.append(float(input()))
 
-print("Inventory after the 1st product is added to it:")
+print("\nInventory after the 1st product is added to it:")
 print(productlist,pricelist)
 print("")
 #--------------------------------------------------------------------------------------
 #second product function
 print("Name of product 2 to add to the end: ", end = "")
 productlist.append(input())
-print("Price of the product: ")
+print("Price of the product: ",end='')
 pricelist.append(float(input()))
 
-print("Inventory after the 2nd product is added to the end:")
+print("\nInventory after the 2nd product is added to the end:")
 print(productlist,pricelist)
 print("")
 #--------------------------------------------------------------------------------------
 #third product function
 print("Name of product 3 to add after the 1st product: ", end = "")
 productlist.insert(1 , (input()))
-print("Price of the product: ")
+print("Price of the product: ",end='')
 pricelist.insert(1 , (float(input())))
 
-print("Inventory after the 3rd product is added after the 1st product:")
+print("\nInventory after the 3rd product is added after the 1st product:")
 print(productlist,pricelist)
 print("")
 #--------------------------------------------------------------------------------------
 #fourth product function
 print("Name of product 4 to insert in position 3 of inventory: ", end = "")
 productlist.insert(2, (input()))
-print("Price of the product: ")
+print("Price of the product: ",end='')
 pricelist.insert(2 , (float(input())))
 
-print("Inventory after the 4th product is added to position 3:")
+print("\nInventory after the 4th product is added to position 3:")
 print(productlist,pricelist)
 print("")
 #--------------------------------------------------------------------------------------
 #fifth product function
 print("Name of product 5 to add to the end of the inventory: ", end = "")
 productlist.append(input())
-print("Price of the product: ")
+print("Price of the product: ",end='')
 pricelist.append(float(input()))
 
-print("Inventory after the 5th product is added to the end of inventory:")
+print("\nInventory after the 5th product is added to the end of inventory:")
 print(productlist,pricelist)
 print("")
 #--------------------------------------------------------------------------------------
@@ -63,16 +63,18 @@ print("")
 print("By what percentage do you want to increase the product prices? (0-100): ", end = "")
 percent = (int(input()))
 
-one_percent = ([int(pricelist) / 100 for pricelist in pricelist])
+one_percent = ([pricelist / 100 for pricelist in pricelist])
+#print(one_percent)
 percent_increase = ([one_percent * percent for one_percent in one_percent])
-percent_increased = ([pricelist[int] + percent_increase[int] for int in range(len(pricelist))])
+#print(percent_increase)
+percent_increased = ([pricelist[i] + percent_increase[i] for i in range(len(pricelist))]) # my dude literally used 'int' as a variable name and got away with it
 
 print("\nInventory after all the prices are increased by", percent, "percent:")
 print(productlist,percent_increased, "\n")
 #--------------------------------------------------------------------------------------
 #Function to remove object and price
 
-print("Name of the product to removed from inventory: ", end = " ")
+print("Name of the product to remove from inventory: ", end = "")
 popval.append(input())
 
 poplist_name = ([productlist.index(str) for str in popval])
